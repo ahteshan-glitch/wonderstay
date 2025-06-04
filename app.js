@@ -33,7 +33,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.get("/", (req, res) => {
-  res.send("Welcome");
+  res.render("/listings");
 });
 app.use(session({
   secret: process.env.SECRET,
