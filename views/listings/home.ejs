@@ -1,0 +1,21 @@
+<% layout("layouts/boilerplate") %>
+
+   
+    
+<div class="listing-grid cards">
+  <% for (let data of listing) { %>
+    <div class="card">
+      <img src="<%= data.image.url %>" class="card-img-top" alt="...">
+      <div class="card-body">
+        <div class="tag">Popular</div>
+        <h5 class="card-title"><%= data.title %></h5>
+        <p class="card-text"><%= data.description %></p>
+        <p class="price-tag">$<%= data.price %></p>
+        <p class="card-text"><%= data.location %>, <%= data.country %></p>
+        <a href="/listings/details/<%= data._id %>" class="gradient-btn">Details</a>
+      </div>
+    </div>
+  <% } %>
+</div>
+   
+    
