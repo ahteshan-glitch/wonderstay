@@ -16,8 +16,11 @@ const flash=require("connect-flash");
 const app = express();
 
 // Database Connection
-mongoose.connect(process.env.DATABASE_URL)
-  .then(() => console.log("✅ Connected to database"))
+async function main(){
+  await mongoose.connect(process.env.DATABASE_URL)
+}
+
+ main().then(() => console.log("✅ Connected to database"))
   .catch(err => console.error("❌ DB connection error:", err));
 
 // View Engine Setup
